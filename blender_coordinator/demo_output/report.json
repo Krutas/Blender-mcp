@@ -1,0 +1,29 @@
+{
+  "job_id": "ffed3493d16a4f4784b78e36439be33d",
+  "counts": {
+    "needs_review": 2
+  },
+  "tasks": [
+    {
+      "id": "leg-001",
+      "ordinal": 0,
+      "task": "{\"id\": \"leg-001\", \"object\": \"ChairLeg\", \"center_mm\": [0.0, 0.0, 0.0], \"rotation_deg\": [0.0, 0.0, 0.0], \"scale\": 1.0, \"material\": \"oak\", \"max_move_mm\": 0.3, \"instruction\": \"Subtle refinement of the existing oak leg surface. Preserve boundary.\", \"core_half_mm\": 10.77, \"outer_half_mm\": 12.77, \"guard_mm\": 1.0}",
+      "status": "needs_review",
+      "attempts": 1,
+      "error": null,
+      "receipt": "{\"token\": \"67bf30385e626956db760d91\", \"before\": \"891653b67953e08725bd6f5bd79466469ca0cb84c829b2aebdbbd231ab3c5087\", \"after\": \"786adcf28e542cc7256ce4a29567951e00357f36ff9cb95af0335077f33f4f1d\", \"checks\": {\"changed_vertices\": 193, \"topology_unchanged\": true, \"buffer_unchanged\": true, \"max_displacement_mm\": 0.15, \"self_intersections_checked\": false, \"visual_quality\": \"needs_review\"}, \"mode\": \"simulation\"}",
+      "updated": 1791660187.78102
+    },
+    {
+      "id": "leg-002",
+      "ordinal": 1,
+      "task": "{\"id\": \"leg-002\", \"object\": \"ChairLeg\", \"center_mm\": [0.0, 0.0, 21.54], \"rotation_deg\": [0.0, 0.0, 0.0], \"scale\": 1.0, \"material\": \"oak\", \"max_move_mm\": 0.3, \"instruction\": \"Subtle refinement of the existing oak leg surface. Preserve boundary.\", \"core_half_mm\": 10.77, \"outer_half_mm\": 12.77, \"guard_mm\": 1.0}",
+      "status": "needs_review",
+      "attempts": 1,
+      "error": null,
+      "receipt": "{\"token\": \"51d40a60001b39677adc3bd9\", \"before\": \"786adcf28e542cc7256ce4a29567951e00357f36ff9cb95af0335077f33f4f1d\", \"after\": \"f60f71560d782da57f1513ff5c609060365b3ad035f90fac9ebee8cc3c0b6ef5\", \"checks\": {\"changed_vertices\": 196, \"topology_unchanged\": true, \"buffer_unchanged\": true, \"max_displacement_mm\": 0.14851710115884192, \"self_intersections_checked\": false, \"visual_quality\": \"needs_review\"}, \"mode\": \"simulation\"}",
+      "updated": 1791660187.9993262
+    }
+  ],
+  "note": "needs_review means geometry committed, NOT photorealism approved"
+}

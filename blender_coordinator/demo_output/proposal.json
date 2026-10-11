@@ -1,0 +1,31 @@
+{
+  "recipe": {
+    "task_id": "leg-001",
+    "brushes": [
+      {
+        "center_mm": [
+          0,
+          0,
+          0
+        ],
+        "radius_mm": 8.0,
+        "displacement_mm": [
+          0,
+          0.15,
+          0
+        ]
+      }
+    ],
+    "note": "Deterministic demonstration; not AI-generated"
+  },
+  "expected": "891653b67953e08725bd6f5bd79466469ca0cb84c829b2aebdbbd231ab3c5087",
+  "token": "67bf30385e626956db760d91",
+  "checks": {
+    "changed_vertices": 193,
+    "topology_unchanged": true,
+    "buffer_unchanged": true,
+    "max_displacement_mm": 0.15,
+    "self_intersections_checked": false,
+    "visual_quality": "needs_review"
+  }
+}

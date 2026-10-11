@@ -1,0 +1,45 @@
+{
+  "max_attempts": 3,
+  "model": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "name": "qwen3.5-4b",
+    "context_tokens": 8192,
+    "max_output_tokens": 2048,
+    "timeout_seconds": 180,
+    "api_key_env": "LOCAL_MODEL_API_KEY",
+    "send_preview": true,
+    "json_mode": true,
+    "disable_thinking": true
+  },
+  "mcp": {
+    "transport": "stdio",
+    "command": "uvx",
+    "args": ["mcp-for-blender"],
+    "env": {"DISABLE_TELEMETRY": "true"},
+    "execute_tool": "execute_blender_code",
+    "timeout_seconds": 180,
+    "user_prompt": "Detalizuok tik paskirtus vietinius kėdės kojos fragmentus. Buferio nekeisk."
+  },
+  "tasks": [
+    {
+      "id": "leg-001",
+      "object": "ZC_ChairLeg",
+      "center_mm": [6, 0, 100],
+      "rotation_deg": [0, 0, 0],
+      "scale": 1,
+      "max_move_mm": 0.3,
+      "material": "Oak. Inherit existing material and mapping; do not modify them.",
+      "instruction": "Refine the existing rounded leg surface locally with subtle smooth curvature. Preserve its existing form and seamless boundary. Do not invent wood pores as large geometry."
+    },
+    {
+      "id": "leg-002",
+      "object": "ZC_ChairLeg",
+      "center_mm": [6, 0, 121.54],
+      "rotation_deg": [0, 0, 0],
+      "scale": 1,
+      "max_move_mm": 0.3,
+      "material": "Oak. Inherit existing material and mapping; do not modify them.",
+      "instruction": "Refine the existing rounded leg surface locally with subtle smooth curvature, keeping continuity with the visible buffer. Preserve overall form."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+test_actual_buffer_change_rejected (test_core.CoreTests.test_actual_buffer_change_rejected) ... ok
+test_actual_float32_rounding_exceeding_limit_rejected (test_core.CoreTests.test_actual_float32_rounding_exceeding_limit_rejected) ... ok
+test_buffer_and_boundaries_unchanged (test_core.CoreTests.test_buffer_and_boundaries_unchanged) ... ok
+test_cross_boundary_triangle_is_frozen (test_core.CoreTests.test_cross_boundary_triangle_is_frozen) ... ok
+test_local_rotation_and_translation_roundtrip (test_core.CoreTests.test_local_rotation_and_translation_roundtrip) ... ok
+test_rejects_excessive_or_outside_brush (test_core.CoreTests.test_rejects_excessive_or_outside_brush) ... ok
+test_rejects_nonfinite_and_unknown_operations (test_core.CoreTests.test_rejects_nonfinite_and_unknown_operations) ... ok
+test_rejects_wrong_task (test_core.CoreTests.test_rejects_wrong_task) ... ok
+test_scale_changes_zone_not_object (test_core.CoreTests.test_scale_changes_zone_not_object) ... ok
+test_summary_local_only_and_bounded (test_core.CoreTests.test_summary_local_only_and_bounded) ... ok
+test_after_artifact_has_actual_committed_hash (test_flow.FlowTests.test_after_artifact_has_actual_committed_hash) ... Zone: leg-001
+Executing <Task finished name='Task-2' coro=<FlowTests.test_after_artifact_has_actual_committed_hash() done, defined at /workspace/scratch/89bfdd9748d3/blender_coordinator/tests/test_flow.py:84> result=None created at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.270 seconds
+ok
+test_after_capture_failure_does_not_repeat_commit (test_flow.FlowTests.test_after_capture_failure_does_not_repeat_commit) ... Zone: leg-001
+Executing <Task finished name='Task-7' coro=<FlowTests.test_after_capture_failure_does_not_repeat_commit() done, defined at /workspace/scratch/89bfdd9748d3/blender_coordinator/tests/test_flow.py:91> result=None created at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.190 seconds
+ok
+test_change_between_resume_check_and_snapshot_is_rejected (test_flow.FlowTests.test_change_between_resume_check_and_snapshot_is_rejected) ... Zone: leg-001
+Zone: leg-002
+Executing <Task finished name='Task-12' coro=<FlowTests.test_change_between_resume_check_and_snapshot_is_rejected() done, defined at /workspace/scratch/89bfdd9748d3/blender_coordinator/tests/test_flow.py:73> result=None created at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.255 seconds
+ok
+test_cli_persists_across_process_restart (test_flow.FlowTests.test_cli_persists_across_process_restart) ... Executing <Task finished name='Task-17' coro=<FlowTests.test_cli_persists_across_process_restart() done, defined at /workspace/scratch/89bfdd9748d3/blender_coordinator/tests/test_flow.py:112> result=None created at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.714 seconds
+ok
+test_config_drift_rejected (test_flow.FlowTests.test_config_drift_rejected) ... ok
+test_demo_commits_fresh_zones_and_resume_skips_them (test_flow.FlowTests.test_demo_commits_fresh_zones_and_resume_skips_them) ... Zone: leg-001
+Zone: leg-002
+Executing <Task finished name='Task-27' coro=<FlowTests.test_demo_commits_fresh_zones_and_resume_skips_them() done, defined at /workspace/scratch/89bfdd9748d3/blender_coordinator/tests/test_flow.py:24> result=None created at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.505 seconds
+ok
+test_interrupted_running_not_blindly_retried (test_flow.FlowTests.test_interrupted_running_not_blindly_retried) ... ok
+test_invalid_model_reply_retries_without_touching_mesh (test_flow.FlowTests.test_invalid_model_reply_retries_without_touching_mesh) ... Zone: leg-001
+ok
+test_invalid_retry_config_rejected_before_queue_creation (test_flow.FlowTests.test_invalid_retry_config_rejected_before_queue_creation) ... ok
+test_resume_refuses_old_or_manually_changed_scene (test_flow.FlowTests.test_resume_refuses_old_or_manually_changed_scene) ... Zone: leg-001
+Executing <Task finished name='Task-47' coro=<FlowTests.test_resume_refuses_old_or_manually_changed_scene() done, defined at /workspace/scratch/89bfdd9748d3/blender_coordinator/tests/test_flow.py:67> result=None created at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.292 seconds
+ok
+test_timeout_after_commit_requires_reconcile_no_double_apply (test_flow.FlowTests.test_timeout_after_commit_requires_reconcile_no_double_apply) ... Zone: leg-001
+Zone: leg-002
+Executing <Task finished name='Task-52' coro=<FlowTests.test_timeout_after_commit_requires_reconcile_no_double_apply() done, defined at /workspace/scratch/89bfdd9748d3/blender_coordinator/tests/test_flow.py:41> result=None created at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.536 seconds
+ok
+test_marker_survives_wrapped_output (test_mcp.ParseTests.test_marker_survives_wrapped_output) ... ok
+test_real_stdio_session_discovers_and_calls_tool (test_mcp.TransportTests.test_real_stdio_session_discovers_and_calls_tool) ... Executing <Task pending name='Task-57' coro=<TransportTests.test_real_stdio_session_discovers_and_calls_tool() running at /workspace/scratch/89bfdd9748d3/blender_coordinator/tests/test_mcp.py:20> cb=[_run_until_complete_cb() at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.404 seconds
+Processing request of type ListToolsRequest
+Processing request of type CallToolRequest
+ok
+test_fenced_json_and_reject_python_or_truncation (test_model.ModelTests.test_fenced_json_and_reject_python_or_truncation) ... ok
+test_http_request_contains_only_local_task (test_model.ModelTests.test_http_request_contains_only_local_task) ... Executing <Task finished name='Task-67' coro=<ModelTests.test_http_request_contains_only_local_task() done, defined at /workspace/scratch/89bfdd9748d3/blender_coordinator/tests/test_model.py:15> result=None created at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.500 seconds
+ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 4.529s
+
+OK

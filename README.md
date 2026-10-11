@@ -12,6 +12,22 @@ Cursor, …). Two pieces:
 The add-on needs nothing but Blender's bundled Python. The MCP side needs the
 `mcp` SDK.
 
+## Delegation roadmap
+
+The agreed room → table → chair → local-detail workflow is documented in the
+[delegation specification](docs/superpowers/specs/2026-10-11-blender-delegation.md)
+and [implementation plan](docs/superpowers/plans/2026-10-11-blender-delegation.md).
+The plan adapts the earlier coordinator to this repository and a sequential
+9B local worker, with bounded regions, checkpoints, review gates and render
+evidence. The original standalone coordinator v0.1 is included in
+[`blender_coordinator/`](blender_coordinator/README_LT.md), with all source files,
+tests, examples, documentation and demo outputs from the original archive.
+Its example configuration targets the earlier `execute_blender_code` MCP
+interface and a 4B model; adaptation to this repository's `blender_execute_code`
+response format and the agreed 9B worker remains part of the roadmap.
+Run it from its own directory and use an isolated virtual environment as
+described in its README.
+
 ## Why this exists (and where the usual one hurts)
 
 The common failure of Blender MCP servers is not Blender — it is the *client*.

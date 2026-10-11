@@ -1,0 +1,14 @@
+{
+  "token": "67bf30385e626956db760d91",
+  "before": "891653b67953e08725bd6f5bd79466469ca0cb84c829b2aebdbbd231ab3c5087",
+  "after": "786adcf28e542cc7256ce4a29567951e00357f36ff9cb95af0335077f33f4f1d",
+  "checks": {
+    "changed_vertices": 193,
+    "topology_unchanged": true,
+    "buffer_unchanged": true,
+    "max_displacement_mm": 0.15,
+    "self_intersections_checked": false,
+    "visual_quality": "needs_review"
+  },
+  "mode": "simulation"
+}
