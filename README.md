@@ -113,7 +113,7 @@ mcp_servers:
     command: "/path/to/.venv/bin/python"
     args: ["-m", "blender_mcp", "serve"]
     env:
-      BLENDER_MCP_HOST: "192.0.2.10"   # the Blender machine
+      BLENDER_MCP_HOST: "192.0.2.10"     # the Blender machine (tailnet IP)
       BLENDER_MCP_PORT: "9876"
       BLENDER_MCP_CONNECT_TIMEOUT: "4"
     timeout: 180

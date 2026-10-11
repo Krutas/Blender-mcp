@@ -8,7 +8,7 @@ timeout during discovery, so no tools ever load.
 Expected: discovery completes in well under a second, all tools register, and a
 tool call fails fast with a readable message instead of hanging.
 
-    python scripts/verify_unreachable_host.py [--host 192.0.2.10] [--port 9876]
+    python scripts/verify_unreachable_host.py [--host 192.0.2.1] [--port 9876]
 """
 
 from __future__ import annotations
@@ -89,7 +89,7 @@ async def run(host: str, port: int) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--host", default="192.0.2.10")
+    parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=9876)
     args = parser.parse_args()
     return asyncio.run(run(args.host, args.port))
