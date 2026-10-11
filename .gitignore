@@ -9,3 +9,6 @@ out/
 *.blend1
 
 # Headless launcher and logs live outside the repo (~/.hermes/cache)
+
+# Isolated implementation worktrees
+.worktrees/
