@@ -63,8 +63,11 @@ Two constraints follow from the repo's conventions and shape everything else:
 scripts/figure/
   anatomy.py    Scale fractions and joint targets. Pure data and pure math.
   vector.py     Minimal 3-vector helpers. Plain tuples in, plain tuples out.
-  rig.py        Bone hierarchy, rest placement, analytic pose solve.
-  body.py       Torso and limb lofts, skin weights, Skin modifier.
+  rig.py        Bone hierarchy and joint polylines, authored in the final pose.
+  loft.py       Ring generation and lofting, with winding and area guarantees.
+  weights.py    Arc-length skin weights and joint blend zones.
+  body.py       Torso, limb and foot lofts, as parts carrying their chain spans.
+  cloth.py      Top and sock shells, built from the same profiles as the body.
   head.py       Cranial loft, eye sockets, nose, cheekbones, jaw, lips, ears.
   materials.py  SSS skin, eye stack, hair, cloth.
   verify.py     Silhouette and limb-length assertions.
@@ -76,11 +79,17 @@ that touches `bpy`. It adds its own directory to `sys.path` before importing the
 package, since `-P` executes the entry point as `__main__` and siblings are not
 otherwise importable.
 
+`loft.py` and `cloth.py` were added after the first draft. Ring construction is
+shared by the body and the head and neither should own it, and the garments
+re-derive the body profiles rather than duplicating them, so they are their own
+module rather than a section of `body.py`.
+
 Modules are split by responsibility because each has a distinct, checkable
-contract: `anatomy` holds numbers, `rig` turns numbers into a posed skeleton,
-`body` and `head` turn a posed skeleton into geometry, `verify` says whether the
-result is right. `body` and `head` are kept apart because they are the two
-largest pieces of work and they can be iterated on independently.
+contract: `anatomy` holds numbers, `rig` turns numbers into a skeleton, `loft`
+and `weights` are the two pieces of shared geometry math, `body` and `head`
+turn those into figures, `verify` says whether the result is right. `body` and
+`head` are kept apart because they are the two largest pieces of work and they
+can be iterated on independently.
 
 ### Skeleton
 
@@ -92,17 +101,18 @@ chest → clavicle.L/R → upperarm.L/R → forearm.L/R → hand.L/R
 hips  → thigh.L/R    → shin.L/R     → foot.L/R
 ```
 
-Rest positions come from the fractions in `anatomy.py`. The pose is then solved,
-not authored: for each chain, compute the bone rotations that place each child
-bone's head on its target coordinate. Two-bone chains (thigh→shin,
-upperarm→forearm) get the same analytic solve.
+**The bones are authored in the final pose, not solved into it.** The mesh is
+built in the target pose, so the bones only need to be *in* that pose to serve
+as a deformation basis; any consistent roll produces the same result. Placing
+them directly removes the quaternion arithmetic, removes `mathutils` from the
+package, and removes a whole class of sign and axis bugs. Rest-pose forward
+kinematics would only pay for itself if the figure were ever re-posed, which
+this build is not — so the joint targets are consumed directly as bone
+coordinates rather than as a set of constraints to satisfy.
 
-**The target coordinates do not change.** `HIP`, `KNEE`, `ANKLE`, `SHOULDER`,
-`ELBOW`, `WRIST` and `HEAD` are carried over from `model_photoreal_figure.py`
-unchanged. Those values already place the elbow on a sphere of radius `UPARM`
-around the shoulder and the wrist at `FOREARM` along the line to the knee, which
-is why they verified to +0.07%/+0.04%. The pose conversion changes how those
-coordinates are reached, not what they are.
+The one bone spanning both sides is `hips`, whose head is the midpoint of the two
+hip joints. A separate hip bone per side would need a duplicate spine down the
+middle of the pelvis.
 
 ### Body surface
 
@@ -188,6 +198,10 @@ before rendering:
   and compares it against the anthropometric table. This catches proportion
   errors in seconds, before spending a minute on a render, and it is the check
   that catches a torso lofted to the wrong cross-sections.
+- `verify` asserts every vertex of the assembled body ends up with at least one
+  bone of non-zero total weight, and that per-vertex weights sum to one. An
+  unbound vertex does not fail visibly in Blender; it detaches at render time as
+  a shell that follows nothing.
 - `verify` asserts the skin weights are normalized per vertex and that no vertex
   has zero total weight. An unbound vertex shows up as a detached shell in the
   render and is otherwise very hard to trace.
