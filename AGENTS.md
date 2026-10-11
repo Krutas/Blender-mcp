@@ -13,9 +13,12 @@ uv pip install -e .
 uv pip install pytest          # or: uv pip install -e ".[dev]"
 ```
 
-Python >= 3.10. Not a git repo — no commit/push workflow here. There is no
-Makefile, CI config, or linter; pytest (configured in `pyproject.toml`,
-`testpaths = ["tests"]`, `addopts = "-q"`) is the only quality gate.
+Python >= 3.10. There is no Makefile, CI config, or linter; pytest (configured
+in `pyproject.toml`, `testpaths = ["tests"]`, `addopts = "-q"`) is the only
+quality gate — run it before committing.
+
+This is a git repo (`Krutas/Blender-mcp` on GitHub). Commit and push normally;
+there is no release branch or tag convention, so `main` is the only branch.
 
 ## Build & test
 
@@ -30,7 +33,7 @@ bash scripts/restart_headless.sh 9877         # restart headless Blender on the 
 runs anywhere. `scripts/*.py` (all run with the venv python, not bare `python`) drive
 a live Blender: `diagnose_render.py`, `shot_startup_scene.py`, `direct_shot.py`,
 `verify_unreachable_host.py`. `restart_headless.sh` hardcodes `REPO=/root/blender-mcp`
-and defaults to port 9877.
+and defaults to port 9877 — check `REPO` matches your clone path before running it.
 
 ## Conventions
 
